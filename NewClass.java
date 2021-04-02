@@ -22,6 +22,7 @@ class Tile {
     int top;
 
     Tile(int l, int t, int r, int b, int c) {
+        // TODO: Переменные конструкотора можно уточнить             
         left = l;
         top = t;
         right = r;
@@ -38,8 +39,9 @@ class Tile {
     }
 }
 
+// TODO: безсмысленное название класса
 public class NewClass extends View {
-    int outline = 5;
+    int outline = 5; // TODO: не очевидно что за переменнаая outline
     Tile[][] tiles = new Tile[4][4];
     boolean generating = true;
     int width, height; // ширина и высота канвы
@@ -83,7 +85,7 @@ public class NewClass extends View {
 
                 Rect tile = new Rect();
                 tile.set(left + outline, top + outline, right - outline, bottom - outline);
-
+                // TODO: Генерацию случайных цветов для тайлов было бы логично вынести в новую функцию, потому что данная про перерисовку
                 int color;
                 if (generating) {
                     if (Math.random() > 0.5) { // math random is between 0 and 1.0 by default
@@ -94,7 +96,7 @@ public class NewClass extends View {
                         color = 0;
                     }
                     tiles[i][j] = new Tile(left, top, right, bottom, color);
-
+                // TODO: Разобраться зачем else
                 } else {
                     color = tiles[i][j].getColor();
                     if (color == 0) {
